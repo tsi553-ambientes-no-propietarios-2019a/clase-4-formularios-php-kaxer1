@@ -16,10 +16,12 @@
             'Peeta'=>'sinsajo',
             );
 
-    $email = $_POST['id_user'];
-    $password = $_POST['id_pass'];
-
+    
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        $email = $_POST['id_user'];
+        $password = $_POST['id_pass'];
+
         foreach($registro as $keys => $valor){
             if($keys == $email && $valor == $password){
                 header('Location: pagina.html');
@@ -55,13 +57,13 @@
             <div class="form-group row">
                 <label for="inputUser" class="col-sm-2 col-form-label">User</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="id_user" id="id_user" placeholder="User">
+                <input type="text" class="form-control" name="id_user" placeholder="User">
             </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-                <input type="password" class="form-control" name="id_pass" id="id_pass" placeholder="Password">
+                <input type="password" class="form-control" name="id_pass" placeholder="Password">
             </div>
             </div>
                 <input type="submit" class="btn btn-primary mb-2" name="ingresar" value="ingresar"  />
